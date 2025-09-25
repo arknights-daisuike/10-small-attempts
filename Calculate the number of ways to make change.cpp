@@ -20,17 +20,17 @@ int Calculatee(int amounts,int T){
         //因为金额小于零,记作0种
         return stely;
     }
-    else if ( amounts==0 || T==1 )
+    if ( amounts==0 || T==1 )
     {
         //因为金额等于零,应当记作1种
         return stely += 1;
     }
-    else {
-        int TOcoin(int n);
-        //递归开始
-        stely += Calculatee(amounts-TOcoin(T)/*获取面额大小*/,T);//进行总金额(amounts)减少
-        stely += Calculatee(amounts,T-1);//进行面额种(Type Of Coin)减少
-    }
+    
+    int TOcoin(int n);
+    //递归开始
+    stely += Calculatee(amounts-TOcoin(T)/*获取面额大小*/,T);//进行总金额(amounts)减少
+    stely += Calculatee(amounts,T-1);//进行面额种(Type Of Coin)减少
+    
     return stely;
 } 
 
